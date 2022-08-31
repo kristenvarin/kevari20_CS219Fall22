@@ -2,13 +2,13 @@
 // A class contains functions.
 // Every Java Program must have a main function.
 public class HelloWorld {
-
     /*
         This is a multiline block comment.
         Another comment line.
      */
     public static void main(String [] args) {
         System.out.println("Hello World");
+        System.out.println("How are you?");
 
         int x = 5;
         boolean z = true;
@@ -18,5 +18,6 @@ public class HelloWorld {
         double electron_mass = 9.1093837015e-31;
     }
 }
+
 
 
