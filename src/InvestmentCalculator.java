@@ -1,4 +1,4 @@
-import Utility.Investment;
+import HW3.Investment;
 
 import java.util.Scanner;
 // can reuse a function from another class
