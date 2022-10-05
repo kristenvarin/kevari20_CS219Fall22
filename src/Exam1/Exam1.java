@@ -27,32 +27,19 @@ public class Exam1 {
     public static int count2to7(int n) {
         int cnt = 0;
         while (n > 0) {
-            if (n % 3 == 0){
+            if (n % 10 < 7 && n % 10 > 2) {
                 cnt++;
-            }
-            else if (n % 4 == 0){
-                cnt++;
-            }
-            else if (n % 5 == 0){
-                cnt++;
-            }
-            else if (n % 8 == 0){
-                cnt --;
-            }
-            else if (n % 9 == 0){
-                cnt --;
             }
             n = n / 10;
         }
         return cnt;
     }
 
-
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = getValue(s);
 
-        System.out.println(count2to7(n));
+        System.out.printf("The amount of digits between 2 and 7 is %d.", count2to7(n));
     }
 
 }
