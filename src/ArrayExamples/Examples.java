@@ -17,9 +17,7 @@ public class Examples {
 
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rng.nextInt(1, 11);
-
         }
-
     }
 
     // Writing our own toString function
@@ -112,9 +110,7 @@ public class Examples {
             if (arr[i].equals(item)){
                 return i;
             }
-
         }
-
         return -1;
     }
 
