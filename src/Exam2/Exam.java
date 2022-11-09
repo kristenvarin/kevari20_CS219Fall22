@@ -45,15 +45,17 @@ public class Exam {
         while (s.hasNextLine()) {
             words[i++] = s.nextLine();
         }
-        String[] pals = new String[9];
-        for (int j = 1; j < pals.length; j++)
-            if (isPalindrome2(words[j])) {
-                pals[j] = (words[j]);
+        String[] pals = new String[n];
+        for (int j = 0; j < pals.length; j++)
+            if (isPalindrome2(words[i])) {
+                pals[j] = (words[i]);
             }
         return reverse(pals);
     }
 
     public static void main(String[] args) {
+        // String[] words = load_words("http://10.60.15.25/~ehar/cs219/wordle-nyt-solutions.txt",
+              //  2309);
         System.out.println(Arrays.toString(load_words("http://10.60.15.25/~ehar/cs219/wordle-nyt-solutions.txt",
                 2309)));
     }

@@ -7,12 +7,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exam2Redo {
-    public static boolean isPalindrome2(String s) {
-        if (s.length() < 2)
-            return true;
-        else return s.charAt(0) == s.charAt(s.length() - 1) &&
-                isPalindrome2(s.substring(1, s.length() - 1));
-    }
     public static void reverse(String [] arr) {
         for (int i = 0; i < arr.length/2; i++){
             String temp = arr[i];
@@ -20,13 +14,19 @@ public class Exam2Redo {
             arr[arr.length - 1 - i] = temp;
         }
     }
+    public static boolean isPalindrome(String s) {
+        if (s.length() < 2)
+            return true;
+        else return s.charAt(0) == s.charAt(s.length() - 1) &&
+                isPalindrome(s.substring(1, s.length() - 1));
+    }
     public static String [] load_words(String path, int n) {
 
-        URL url = null; // null is the "nothing value"
+        URL url = null;
         Scanner s = null;
 
         try {
-            url = new URL(path); // create a URL object for the path
+            url = new URL(path);
             s = new Scanner(url.openConnection().getInputStream());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
@@ -34,25 +34,23 @@ public class Exam2Redo {
             throw new RuntimeException(e);
         }
 
-        String[] words = new String[n];
+        String[] palindromes = new String[n];
         int i = 0;
         while (s.hasNextLine()) {
             String word = s.nextLine();
-            if (isPalindrome2(word))
-                words[i++] = word;
+            if (isPalindrome(word))
+                palindromes[i++] = word;
         }
-        return words;
+        return palindromes;
     }
 
     public static void main(String[] args) {
-        String [] words = load_words("http://10.60.15.25/~ehar/cs219/wordle-nyt-solutions.txt",
+        String [] palindromes = load_words("http://10.60.15.25/~ehar/cs219/wordle-nyt-solutions.txt",
                 9);
+        Arrays.sort(palindromes);
+        reverse(palindromes);
 
-        Arrays.sort(words);
-        reverse(words);
-
-        System.out.println(Arrays.toString(words));
+        System.out.println(Arrays.toString(palindromes));
     }
 }
-
 
