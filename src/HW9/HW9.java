@@ -30,8 +30,7 @@ public class HW9 {
         else if (y % 2 != 0)
             return fastbigpow(x, y - 1).multiply(x);
         else
-           return bigpow(fastbigpow(x, y / 2), 2);
-        // need to do this without the pow
+           return fastbigpow(x, y / 2).multiply(fastbigpow(x, y / 2));
     }
 
     public static void main(String[] args) {
